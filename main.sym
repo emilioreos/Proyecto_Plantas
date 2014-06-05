@@ -3,14 +3,17 @@
 006     PORTB
 007     PORTC
 008     PSP_DATA
-015-016 CCP_1
 015     CCP_1_LOW
+015-016 CCP_1
 016     CCP_1_HIGH
-01B     CCP_2_LOW
 01B-01C CCP_2
+01B     CCP_2_LOW
 01C     CCP_2_HIGH
 020-021 x
-022     @TRIS_C
+022-023 v
+024     @TRIS_C
+025     @MUL88.P1
+026     @MUL88.P1
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -22,15 +25,16 @@
 10D-10E @READ_PROGRAM_MEMORY.P1
 10D-10E @WRITE_PROGRAM_MEMORY.P2
 
-0004  main
-0004  @cinit
+002B  main
+0004  @MUL88
+002B  @cinit
 
 Project Files:
     main.c
-    ..\..\..\..\Program Files\PICC\devices\16F877A.h
+    ..\..\..\..\PROGRA~2\PICC\devices\16F877A.h
 
 Units:
-    C:\Users\EmilioReos\Desktop\Plantitas\main.c (main)
+    C:\Users\hugo\git\Proyecto_Plantas\main.c (main)
 
 Compiler Settings:
     Processor:      PIC16F877A
@@ -40,11 +44,11 @@ Compiler Settings:
     Short,Int,Long: 1,8,16
 
 Output Files:
-    Errors:      C:\Users\EmilioReos\Desktop\Plantitas\main.err
-    Ext Symbols: C:\Users\EmilioReos\Desktop\Plantitas\main.esym
-    INHX8:       C:\Users\EmilioReos\Desktop\Plantitas\main.hex
-    Symbols:     C:\Users\EmilioReos\Desktop\Plantitas\main.sym
-    List:        C:\Users\EmilioReos\Desktop\Plantitas\main.lst
-    Debug/COFF:  C:\Users\EmilioReos\Desktop\Plantitas\main.cof
+    Errors:      C:\Users\hugo\git\Proyecto_Plantas\main.err
+    Ext Symbols: C:\Users\hugo\git\Proyecto_Plantas\main.esym
+    INHX8:       C:\Users\hugo\git\Proyecto_Plantas\main.hex
+    Symbols:     C:\Users\hugo\git\Proyecto_Plantas\main.sym
+    List:        C:\Users\hugo\git\Proyecto_Plantas\main.lst
+    Debug/COFF:  C:\Users\hugo\git\Proyecto_Plantas\main.cof
     Call Tree:   main.tre
     Statistics:  main.sta

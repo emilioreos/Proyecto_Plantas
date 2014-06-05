@@ -1,7 +1,7 @@
-D G "__PCM__" 0 0 ""4.032""
-D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""27-may.-14""
-D G "__TIME__" 0 0 ""21:50:15"" "Standard Header file for the PIC16F877A device ////////////////"
+D G "__PCM__" 0 46 ""4.032""
+D G "__DEVICE__" 0 46 "877"
+D G "__DATE__" 0 46 ""05-jun.-14""
+D G "__TIME__" 0 46 ""11:17:00"" "Standard Header file for the PIC16F877A device ////////////////"
 d G "PIN_A0" 1 19 "40"
 d G "PIN_A1" 1 20 "41"
 d G "PIN_A2" 1 21 "42"
@@ -188,7 +188,8 @@ d G "INT_EEPROM" 1 304 "0x8D10"
 d G "INT_TIMER0" 1 305 "0x0B20"
 d G "INT_COMP" 1 306 "0x8D40"
 V G "x" 0 9 "int16"
-F G "main" 0 12 "int8()"
+V G "v" 0 10 "int16"
+F G "main" 0 13 "int8()"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 0

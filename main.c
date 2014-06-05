@@ -7,6 +7,7 @@
 #use delay(clock=4000000)
 
 int16 x=0;
+int16 v=0;
 
 void main()
 {
@@ -27,10 +28,12 @@ void main()
   
   
    x=read_adc();
-   PORTB=x;
+   v=PORTC*113;
    
-   if(x<PORTC){
-   PORTB=0xff;
+   
+   if(x<v){
+   PORTB=0x80;
+   
    }else{
    PORTB=0;
    }
