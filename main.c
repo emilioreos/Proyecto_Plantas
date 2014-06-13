@@ -32,9 +32,9 @@ void main()
    
    
    if(x>v){
-   PORTB=0x80;
-   }else{
    PORTB=0;
+   }else{
+   PORTB=0x80;
    }
    
    
