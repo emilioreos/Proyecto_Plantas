@@ -1,5 +1,4 @@
 #include <16F877A.h>
-#device adc=10
 
 #FUSES XT                       
 #byte PORTB=0x06
@@ -28,12 +27,12 @@ void main()
   
   
    x=read_adc();
-   v=PORTC*113;
+   x=x/15;
+   v=PORTC;
    
    
-   if(x<v){
+   if(x>v){
    PORTB=0x80;
-   
    }else{
    PORTB=0;
    }

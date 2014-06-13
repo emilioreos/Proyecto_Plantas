@@ -1,11 +1,11 @@
-CCS PCM C Compiler, Version 4.032, 62930               05-jun.-14 11:17
+CCS PCM C Compiler, Version 4.032, 62930               13-jun-14 12:05
 
-               Filename: C:\Users\hugo\git\Proyecto_Plantas\main.lst
+               Filename: C:\Users\Crixthopher\git\Proyecto_Plantas\main.lst
 
-               ROM used: 161 words (2%)
+               ROM used: 165 words (2%)
                          Largest free fragment is 2048
                RAM used: 11 (3%) at main() level
-                         13 (4%) worst case
+                         16 (4%) worst case
                Stack:    1 locations
 
 *
@@ -18,7 +18,6 @@ CCS PCM C Compiler, Version 4.032, 62930               05-jun.-14 11:17
 .................... #device PIC16F877A 
 .................... #list 
 ....................  
-.................... #device adc=10 
 ....................  
 .................... #FUSES XT                        
 .................... #byte PORTB=0x06 
@@ -62,7 +61,7 @@ CCS PCM C Compiler, Version 4.032, 62930               05-jun.-14 11:17
 0044:  BSF    1F.6
 0045:  BSF    1F.7
 0046:  BSF    03.5
-0047:  BSF    1F.7
+0047:  BCF    1F.7
 0048:  BCF    03.5
 0049:  BSF    1F.0
 ....................    setup_psp(PSP_DISABLED); 
@@ -140,50 +139,54 @@ CCS PCM C Compiler, Version 4.032, 62930               05-jun.-14 11:17
 0080:  BSF    1F.2
 0081:  BTFSC  1F.2
 0082:  GOTO   081
-0083:  BSF    03.5
-0084:  MOVF   1E,W
-0085:  BCF    03.5
-0086:  MOVWF  20
-0087:  MOVF   1E,W
-0088:  MOVWF  21
-....................    v=PORTC*113; 
-0089:  MOVF   07,W
-008A:  MOVWF  25
-008B:  MOVLW  71
-008C:  MOVWF  26
+0083:  MOVF   1E,W
+0084:  CLRF   21
+0085:  MOVWF  20
+....................    x=x/15; 
+0086:  MOVF   21,W
+0087:  MOVWF  26
+0088:  MOVF   20,W
+0089:  MOVWF  25
+008A:  CLRF   28
+008B:  MOVLW  0F
+008C:  MOVWF  27
 008D:  GOTO   004
-008E:  CLRF   23
-008F:  MOVF   78,W
-0090:  MOVWF  22
+008E:  MOVF   79,W
+008F:  MOVWF  21
+0090:  MOVF   78,W
+0091:  MOVWF  20
+....................    v=PORTC; 
+0092:  CLRF   23
+0093:  MOVF   07,W
+0094:  MOVWF  22
 ....................     
 ....................     
-....................    if(x<v){ 
-0091:  MOVF   21,W
-0092:  SUBWF  23,W
-0093:  BTFSS  03.0
-0094:  GOTO   09E
-0095:  BTFSS  03.2
-0096:  GOTO   09B
-0097:  MOVF   22,W
-0098:  SUBWF  20,W
-0099:  BTFSC  03.0
-009A:  GOTO   09E
+....................    if(x>v){ 
+0095:  MOVF   23,W
+0096:  SUBWF  21,W
+0097:  BTFSS  03.0
+0098:  GOTO   0A2
+0099:  BTFSS  03.2
+009A:  GOTO   09F
+009B:  MOVF   20,W
+009C:  SUBWF  22,W
+009D:  BTFSC  03.0
+009E:  GOTO   0A2
 ....................    PORTB=0x80; 
-009B:  MOVLW  80
-009C:  MOVWF  06
-....................     
+009F:  MOVLW  80
+00A0:  MOVWF  06
 ....................    }else{ 
-009D:  GOTO   09F
+00A1:  GOTO   0A3
 ....................    PORTB=0; 
-009E:  CLRF   06
+00A2:  CLRF   06
 ....................    } 
 ....................     
 ....................     
 ....................    } 
-009F:  GOTO   080
+00A3:  GOTO   080
 ....................  
 .................... } 
-00A0:  SLEEP
+00A4:  SLEEP
 
 Configuration Fuses:
    Word  1: 3F71   XT NOWDT PUT NODEBUG NOPROTECT BROWNOUT NOLVP NOCPD NOWRT

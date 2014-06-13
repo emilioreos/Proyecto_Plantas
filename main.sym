@@ -12,8 +12,9 @@
 020-021 x
 022-023 v
 024     @TRIS_C
-025     @MUL88.P1
-026     @MUL88.P1
+025-026 @DIV1616.P1
+027-028 @DIV1616.P1
+029     @DIV1616.@SCRATCH
 077     @SCRATCH
 078     @SCRATCH
 078     _RETURN_
@@ -26,29 +27,29 @@
 10D-10E @WRITE_PROGRAM_MEMORY.P2
 
 002B  main
-0004  @MUL88
+0004  @DIV1616
 002B  @cinit
 
 Project Files:
     main.c
-    ..\..\..\..\PROGRA~2\PICC\devices\16F877A.h
+    ..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h
 
 Units:
-    C:\Users\hugo\git\Proyecto_Plantas\main.c (main)
+    C:\Users\Crixthopher\git\Proyecto_Plantas\main.c (main)
 
 Compiler Settings:
     Processor:      PIC16F877A
     Pointer Size:   16
-    ADC Range:      0-1023
+    ADC Range:      0-255
     Opt Level:      0
     Short,Int,Long: 1,8,16
 
 Output Files:
-    Errors:      C:\Users\hugo\git\Proyecto_Plantas\main.err
-    Ext Symbols: C:\Users\hugo\git\Proyecto_Plantas\main.esym
-    INHX8:       C:\Users\hugo\git\Proyecto_Plantas\main.hex
-    Symbols:     C:\Users\hugo\git\Proyecto_Plantas\main.sym
-    List:        C:\Users\hugo\git\Proyecto_Plantas\main.lst
-    Debug/COFF:  C:\Users\hugo\git\Proyecto_Plantas\main.cof
+    Errors:      C:\Users\Crixthopher\git\Proyecto_Plantas\main.err
+    Ext Symbols: C:\Users\Crixthopher\git\Proyecto_Plantas\main.esym
+    INHX8:       C:\Users\Crixthopher\git\Proyecto_Plantas\main.hex
+    Symbols:     C:\Users\Crixthopher\git\Proyecto_Plantas\main.sym
+    List:        C:\Users\Crixthopher\git\Proyecto_Plantas\main.lst
+    Debug/COFF:  C:\Users\Crixthopher\git\Proyecto_Plantas\main.cof
     Call Tree:   main.tre
     Statistics:  main.sta

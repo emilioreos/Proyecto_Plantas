@@ -16,11 +16,11 @@ AdditionalOptionString=
 [Windows]
 0=0000 %S 0 0 796 451 3 0
 [Opened Files]
-1=C:\Users\hugo\git\Proyecto_Plantas\main.c
+1=C:\Users\Crixthopher\git\Proyecto_Plantas\main.c
 2=
 [Target Data]
 OptionString=-p +FM
-FileList=C:\Users\hugo\git\Proyecto_Plantas\main.c
+FileList=C:\Users\Crixthopher\git\Proyecto_Plantas\main.c
 [Units]
 Count=1
 1=main.c (main)
